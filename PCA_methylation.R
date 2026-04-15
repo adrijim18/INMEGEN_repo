@@ -22,7 +22,6 @@ set.seed(42)
 # --- 2. LEER SOLO LOS IDs DE CpG DE CADA ARCHIVO ---
 # Antes de cargar los datos completos, identificamos qué CpGs
 # están presentes en los 5 datasets para poder compararlos
-cat("Leyendo IDs de CpGs de cada archivo...\n")
 
 ids_brca <- fread("BRCA.cct", select = 1)[[1]]
 ids_luad <- fread("LUAD.cct", select = 1)[[1]]
@@ -124,5 +123,4 @@ g1 <- ggplot(pca_df, aes(x = PC1, y = PC2, color = cancer)) +
 
 print(g1)
 ggsave("PCA_por_cancer.png", g1, width = 8, height = 6, dpi = 300)
-cat("Guardada: PCA_por_cancer.png\n")
-cat("\n¡Análisis completado!\n")
+cat("\n¡Análisis completo!\n")
